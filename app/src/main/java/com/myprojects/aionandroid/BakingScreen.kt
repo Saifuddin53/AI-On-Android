@@ -36,6 +36,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.myprojects.aionandroid.text_to_image.GenerateImageScreen
+import com.myprojects.aionandroid.text_to_image.ImageGenerationViewModel
 
 val images = arrayOf(
     // Image generated using Gemini from the prompt "cupcake image"
@@ -44,11 +46,13 @@ val images = arrayOf(
     R.drawable.baked_goods_2,
     // Image generated using Gemini from the prompt "cake images"
     R.drawable.baked_goods_3,
+    R.drawable.screenshot_2024_10_17_172447
 )
 val imageDescriptions = arrayOf(
     R.string.image1_description,
     R.string.image2_description,
     R.string.image3_description,
+    R.string.image4_description
 )
 
 @Composable
@@ -66,14 +70,9 @@ fun BakingScreen(
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
-        Text(
-            text = stringResource(R.string.baking_title),
-            style = MaterialTheme.typography.titleLarge,
-            modifier = Modifier.padding(16.dp)
-        )
 
         LazyRow(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth().padding(top = 10.dp)
         ) {
             itemsIndexed(images) { index, image ->
                 var imageModifier = Modifier
