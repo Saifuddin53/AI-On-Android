@@ -68,6 +68,19 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.kotlinx.coroutines.android)
 
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.cio) // CIO engine
+    implementation(libs.ktor.client.json) // Replace with your Ktor version
+    implementation(libs.ktor.client.serialization)
+    implementation(libs.ktor.client.logging)
+    implementation(libs.ktor.serialization.kotlinx.json) // Replace with your Ktor version
+    implementation(libs.kotlinx.serialization.json) // Replace with the appropriate version
+
+    //coil dependency
+    implementation(libs.coil.compose)
+
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
